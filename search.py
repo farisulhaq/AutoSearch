@@ -4,7 +4,7 @@ import time
 from keywords import generate_long_query
 
 # Jumlah pencarian yang akan dilakukan
-search_count = 35
+search_count = 1
 
 # Delay antara aksi (dalam detik)
 delay_between_actions = 5
@@ -26,18 +26,40 @@ def open_edge():
     pyautogui.press('enter')  # Tekan Enter untuk membuka Edge
     time.sleep(5)  # Tunggu Edge terbuka
 
-open_edge()
-
-for i in range(search_count):
-    # Fokus ke address bar (Ctrl + L)
-    pyautogui.hotkey('ctrl', 'l')
+    # Buka Microsoft Edge
+def open_chrome():
+    pyautogui.hotkey('winleft')  # Tekan tombol Windows
     time.sleep(1)
+    pyautogui.typewrite('chrome')  # Ketik "microsoft edge" dengan gaya mengetik manusia
+    time.sleep(1)
+    pyautogui.press('enter')  # Tekan Enter untuk membuka Edge
+    time.sleep(5)  # Tunggu Edge terbuka
 
-    # Ketik query pencarian dengan gaya mengetik manusia
-    google_search(generate_long_query())
+def search(openApp):
 
-    time.sleep(delay_between_actions)
+    openApp()
 
-print("Pencarian selesai!")
-pyautogui.hotkey('ctrl', 'w')
+    # Lakukan pencarian
+    for i in range(search_count):
+        # Fokus ke address bar (Ctrl + L)
+        pyautogui.hotkey('ctrl', 'l')
+        time.sleep(1)
+
+        # Ketik query pencarian dengan gaya mengetik manusia
+        google_search(generate_long_query())
+
+        time.sleep(delay_between_actions)
+
+    # Tutup Microsoft Edge
+    pyautogui.hotkey('ctrl', 'w')
+
+if __name__ == "__main__":
+    # Buka Microsoft Edge
+    search(open_edge)
+    time.sleep(5)  # Tunggu Chrome terbuka
+    search(open_chrome)
+
+    
+
+
 
