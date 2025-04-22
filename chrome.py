@@ -40,7 +40,7 @@ def clear_search_bar():
     run_adb_command("adb shell input tap 945 180")
     time.sleep(0.1)
 
-def search_bing(query, is_first_search):
+def search_bing(query):
     """Melakukan pencarian di aplikasi Bing"""
     
     tap_search_bar(first_search_bar_position)  # Klik tengah layar saat pertama kali
@@ -60,7 +60,8 @@ open_bing()
 
 for i in range(search_count):
     query = generate_long_query().replace(" ", "%s") # Pilih query acak
-    search_bing(query, is_first_search=(i == 0))  # Gunakan tap pertama hanya untuk pencarian pertama
+    print(f"Pencarian ke-{i + 1}/{search_count}: {query}")  # Tampilkan query yang sedang dicari
+    search_bing(query)  # Gunakan tap pertama hanya untuk pencarian pertama
     time.sleep(delay_between_searches)
 
 print("Pencarian di Bing selesai!")

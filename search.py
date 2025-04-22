@@ -4,7 +4,7 @@ import time
 from keywords import generate_long_query
 
 # Jumlah pencarian yang akan dilakukan
-search_count = 1
+search_count = 35
 
 # Delay antara aksi (dalam detik)
 delay_between_actions = 5

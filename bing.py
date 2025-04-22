@@ -64,6 +64,7 @@ open_bing()
 
 for i in range(search_count):
     query = generate_long_query().replace(" ", "%s") # Pilih query acak
+    print(f"Pencarian ke-{i + 1}/{search_count}: {query}")  # Tampilkan query yang sedang dicari
     search_bing(query, is_first_search=(i == 0))  # Gunakan tap pertama hanya untuk pencarian pertama
     time.sleep(delay_between_searches)
 
