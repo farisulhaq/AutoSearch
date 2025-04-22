@@ -39,14 +39,20 @@ def search(openApp):
 
     openApp()
 
+    print("\nPencarian dimulai...")
+
     # Lakukan pencarian
     for i in range(search_count):
         # Fokus ke address bar (Ctrl + L)
         pyautogui.hotkey('ctrl', 'l')
         time.sleep(1)
 
+        query = generate_long_query()
+
+        print(f"Pencarian ke-{i + 1}/{search_count}: {query}")
+
         # Ketik query pencarian dengan gaya mengetik manusia
-        google_search(generate_long_query())
+        google_search(query)
 
         time.sleep(delay_between_actions)
 
