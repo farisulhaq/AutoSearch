@@ -28,16 +28,16 @@ IF %ERRORLEVEL% NEQ 0 (
 )
 
 echo ===================================================
-echo [INFO] Menjalankan aplikasi Python (bing.py)...
+echo [INFO] Menjalankan aplikasi Python (chrome.py)...
 python bing.py
 echo ===================================================
-echo [INFO] Program (search.py) selesai dijalankan.
+echo [INFO] Program (chrome.py) selesai dijalankan.
 
 echo ===================================================
-echo [INFO] Menjalankan aplikasi Python (chrome.py)...
+echo [INFO] Menjalankan aplikasi Python (bing.py)...
 python chrome.py
 echo ===================================================
-echo [INFO] Program (chrome.py) selesai dijalankan.
+echo [INFO] Program (bing.py) selesai dijalankan.
 
 REM Deactivate virtual environment
 call venv\Scripts\deactivate.bat

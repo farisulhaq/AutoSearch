@@ -21,7 +21,7 @@ def google_search(query):
 def open_edge():
     pyautogui.hotkey('winleft')  # Tekan tombol Windows
     time.sleep(1)
-    pyautogui.typewrite('microsoft edge')  # Ketik "microsoft edge" dengan gaya mengetik manusia
+    pyautogui.typewrite('edge')  # Ketik "microsoft edge" dengan gaya mengetik manusia
     time.sleep(1)
     pyautogui.press('enter')  # Tekan Enter untuk membuka Edge
     time.sleep(5)  # Tunggu Edge terbuka
@@ -40,6 +40,8 @@ def search(openApp):
     openApp()
 
     print("\nPencarian dimulai...")
+
+    # q = "https://www.bing.com/search?&q="
 
     # Lakukan pencarian
     for i in range(search_count):
